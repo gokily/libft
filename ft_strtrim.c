@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:16:44 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 13:13:00 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/08 16:35:20 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strtrim(char const *s)
 {
 	int		start;
-	int		end;
 	int		i;
 	char	*ptr;
 
@@ -26,7 +25,7 @@ char	*ft_strtrim(char const *s)
 		i++;
 	if (s[i] == '\0')
 	{
-		if(!(ptr = ft_strnew(0)))
+		if (!(ptr = ft_strnew(0)))
 			return (0);
 		return (ptr);
 	}
@@ -35,14 +34,8 @@ char	*ft_strtrim(char const *s)
 	i--;
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i--;
-	end = i;
-	if (!(ptr = ft_strnew(end - start + 1)))
+	if (!(ptr = ft_strnew(i - start + 1)))
 		return (0);
-	i = 0;
-	while (i <= end - start)
-	{
-		ptr[i] = s[start + i];
-		i++;
-	}
+	ptr = ft_strncpy(ptr, s + start, i - start + 1);
 	return (ptr);
 }

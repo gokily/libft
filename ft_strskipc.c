@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strskipc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 15:00:28 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 15:46:53 by gly              ###   ########.fr       */
+/*   Created: 2018/11/08 16:19:29 by gly               #+#    #+#             */
+/*   Updated: 2018/11/08 17:01:42 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int		ft_strskipc(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
+	int		j;
 
-	i = 0;
-	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < len)
-	{
-		if (haystack[i] == needle[0])
-		{
-			j = 0;
-			while (haystack[i + j] == needle[j] && i + j < len)
-			{
-				j++;
-				if (needle[j] == '\0')
-					return ((char *)(haystack + i));
-			}
-		}
-		i++;
-	}
-	return (0);
+	j = 0;
+	while (s[j] != c && s[j] != '\0')
+		j++;
+	return (j);
 }

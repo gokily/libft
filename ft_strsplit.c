@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:31:41 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 13:18:45 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/08 16:26:54 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,14 @@ static int		ft_count_word(char const *s, char c)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		n_word;
-	char	**tab;
 	int		n;
+	char	**tab;
 	size_t	i;
 	size_t	j;
 
 	if (s == 0)
 		return (0);
-	n_word = ft_count_word(s, c);
-	if (!(tab = (char **)malloc(sizeof(*tab) * (n_word + 1))))
+	if (!(tab = (char **)malloc(sizeof(*tab) * (ft_count_word(s, c) + 1))))
 		return (0);
 	n = 0;
 	i = 0;
@@ -47,12 +45,10 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			j = i;
-			while (s[j] != c && s[j] != '\0')
-				j++;
-			tab[n] = ft_strsub(s, i, j - i);
-			i = j - 1;
+			j = ft_strskipc(s + i, c);
+			tab[n] = ft_strsub(s, i, j);
 			n++;
+			i = i + j - 1;
 		}
 		i++;
 	}

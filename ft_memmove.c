@@ -6,30 +6,46 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:43:55 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 18:54:54 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/08 14:55:01 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+static void	*ft_memmove_end(unsigned char *dst, unsigned char *src, size_t n)
 {
-	size_t			i;
-	unsigned char	tmp[n];
-	unsigned char	*ptr;
+	n--;
+	while (n + 1 >= 1)
+	{
+		dst[n] = src[n];
+		n--;
+	}
+	return (dst);
+}
+
+static void	*ft_memmove_ft(unsigned char *dst, unsigned char *src, size_t n)
+{
+	size_t	i;
 
 	i = 0;
+	while (i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
+}
+
+void		*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*tmp;
+	unsigned char	*ptr;
+
 	ptr = (unsigned char *)dest;
-	while (i < n)
-	{
-		tmp[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		ptr[i] = tmp[i];
-		i++;
-	}
+	tmp = (unsigned char *)src;
+	if (dest > src)
+		dest = ft_memmove_end(ptr, tmp, n);
+	else
+		dest = ft_memmove_ft(ptr, tmp, n);
 	return (dest);
 }

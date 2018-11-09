@@ -6,7 +6,7 @@
 #    By: gly <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 13:31:32 by gly               #+#    #+#              #
-#    Updated: 2018/11/09 10:41:51 by gly              ###   ########.fr        #
+#    Updated: 2018/11/09 17:00:16 by gly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJ = $(SRC:.c=.o)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-.PHONY: clean fclean
+.PHONY: clean fclean re all
 
 clean:
 	/bin/rm -f *.o

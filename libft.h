@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:29:36 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 17:01:44 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/09 10:15:45 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int					ft_intabs(int n);
+int					ft_intlen_base(int n, int base);
+t_list				*ft_lstlast(t_list *alst);
+t_list				*ft_lstpop(t_list **alst);
+void				ft_lstpush(t_list *alst, t_list *elem);
 int					ft_strskipc(char const *s, char c);
 #endif

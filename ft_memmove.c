@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:43:55 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 14:55:01 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/09 09:53:55 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 static void	*ft_memmove_end(unsigned char *dst, unsigned char *src, size_t n)
 {
-	n--;
-	while (n + 1 >= 1)
+	while (n >= 1)
 	{
-		dst[n] = src[n];
 		n--;
+		dst[n] = src[n];
 	}
 	return (dst);
 }

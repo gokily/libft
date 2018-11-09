@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 10:41:55 by gly               #+#    #+#             */
-/*   Updated: 2018/11/09 09:01:24 by gly              ###   ########.fr       */
+/*   Created: 2018/11/09 09:54:35 by gly               #+#    #+#             */
+/*   Updated: 2018/11/09 09:57:22 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_list	*ft_lstlast(t_list *alst)
 {
-	new->next = *alst;
-	*alst = new;
+	if (alst == 0)
+		return (0);
+	while (alst->next != 0)
+		alst = alst->next;
+	return (alst);
 }

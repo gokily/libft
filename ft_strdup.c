@@ -6,13 +6,13 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 09:40:43 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 18:38:28 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/12 17:47:07 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(char const *str)
 {
 	int		len;
 	int		i;

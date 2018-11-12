@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:31:41 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 16:26:54 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/12 18:42:41 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ static int		ft_count_word(char const *s, char c)
 	return (nb);
 }
 
+static char		**ft_freetab(char **tab, int n)
+{
+	int		i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(tab[i]);
+		i++;
+	}
+	return (NULL);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	int		n;
@@ -46,7 +59,8 @@ char			**ft_strsplit(char const *s, char c)
 		if (s[i] != c)
 		{
 			j = ft_strskipc(s + i, c);
-			tab[n] = ft_strsub(s, i, j);
+			if (!(tab[n] = ft_strsub(s, i, j)))
+				return (ft_freetab(tab, n));
 			n++;
 			i = i + j - 1;
 		}

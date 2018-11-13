@@ -6,7 +6,7 @@
 #    By: gly <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 13:31:32 by gly               #+#    #+#              #
-#    Updated: 2018/11/09 17:00:16 by gly              ###   ########.fr        #
+#    Updated: 2018/11/13 16:32:37 by gly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME): $(OBJ)
 .PHONY: clean fclean re all
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)

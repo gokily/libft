@@ -6,18 +6,20 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:34:45 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 14:47:37 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:40:40 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int		len;
-	int		i;
+	size_t		len;
+	size_t		i;
 
-	len = ft_strlen(s1);
+	len = 0;
+	while (s1[len] != '\0')
+		len++;
 	i = 0;
 	while (s2[i] != '\0')
 	{

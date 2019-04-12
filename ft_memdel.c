@@ -6,17 +6,17 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:15:21 by gly               #+#    #+#             */
-/*   Updated: 2018/11/09 08:45:43 by gly              ###   ########.fr       */
+/*   Updated: 2019/02/22 09:22:23 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {
 	if (ap)
 	{
 		free(*ap);
-		*ap = 0;
+		*ap = NULL;
 	}
 }

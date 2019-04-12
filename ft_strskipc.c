@@ -6,15 +6,15 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 16:19:29 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 17:01:42 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 11:11:49 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 int		ft_strskipc(char const *s, char c)
 {
-	int		j;
+	size_t		j;
 
 	j = 0;
 	while (s[j] != c && s[j] != '\0')

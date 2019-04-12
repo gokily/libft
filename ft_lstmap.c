@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:50:24 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 11:18:28 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:14:26 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*elem;
 	t_list	*start;
 
-	if (lst == 0)
+	if (lst == 0 || f == 0)
 		return (0);
 	elem = f(lst);
 	if (!(start = ft_lstnew(elem->content, elem->content_size)))

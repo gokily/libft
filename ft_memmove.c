@@ -6,45 +6,36 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:43:55 by gly               #+#    #+#             */
-/*   Updated: 2018/11/09 09:53:55 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:42:51 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static void	*ft_memmove_end(unsigned char *dst, unsigned char *src, size_t n)
-{
-	while (n >= 1)
-	{
-		n--;
-		dst[n] = src[n];
-	}
-	return (dst);
-}
-
-static void	*ft_memmove_ft(unsigned char *dst, unsigned char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
+#include <string.h>
 
 void		*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*tmp;
 	unsigned char	*ptr;
+	size_t			i;
 
 	ptr = (unsigned char *)dest;
 	tmp = (unsigned char *)src;
+	i = 0;
 	if (dest > src)
-		dest = ft_memmove_end(ptr, tmp, n);
+	{
+		while (n >= 1)
+		{
+			n--;
+			ptr[n] = tmp[n];
+		}
+	}
 	else
-		dest = ft_memmove_ft(ptr, tmp, n);
+	{
+		while (i < n)
+		{
+			ptr[i] = tmp[i];
+			i++;
+		}
+	}
 	return (dest);
 }

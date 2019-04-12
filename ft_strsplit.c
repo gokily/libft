@@ -6,16 +6,17 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:31:41 by gly               #+#    #+#             */
-/*   Updated: 2018/11/12 18:42:41 by gly              ###   ########.fr       */
+/*   Updated: 2019/02/22 09:24:33 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int		ft_count_word(char const *s, char c)
 {
-	int		nb;
-	int		i;
+	size_t	nb;
+	size_t	i;
 
 	nb = 0;
 	i = 0;
@@ -28,14 +29,15 @@ static int		ft_count_word(char const *s, char c)
 	return (nb);
 }
 
-static char		**ft_freetab(char **tab, int n)
+static char		**ft_freetab(char **tab, size_t n)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
 		free(tab[i]);
+		tab[i] = NULL;
 		i++;
 	}
 	return (NULL);
@@ -43,7 +45,7 @@ static char		**ft_freetab(char **tab, int n)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		n;
+	size_t	n;
 	char	**tab;
 	size_t	i;
 	size_t	j;

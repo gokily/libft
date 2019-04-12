@@ -6,11 +6,11 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 14:42:50 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 14:46:15 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 11:02:36 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -18,8 +18,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_src;
 	size_t	i;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen((char *)src);
+	len_dst = 0;
+	len_src = 0;
+	while (dst[len_dst] != '\0')
+		len_dst++;
+	while (src[len_src] != '\0')
+		len_src++;
 	i = 0;
 	if (len_dst >= size)
 		return (len_src + size);

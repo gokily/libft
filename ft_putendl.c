@@ -6,14 +6,19 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:04:26 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 12:15:55 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:42:38 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	write(1, s, i);
+	write(1, "\n", 1);
 }

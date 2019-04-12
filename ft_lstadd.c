@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 10:41:55 by gly               #+#    #+#             */
-/*   Updated: 2018/11/09 09:01:24 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:10:42 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (alst)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

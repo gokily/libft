@@ -6,21 +6,26 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:40:54 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 14:43:20 by gly              ###   ########.fr       */
+/*   Updated: 2018/12/20 14:42:26 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_intlen_base(int n, int base)
 {
 	int		i;
+	int		power;
 
 	i = 1;
-	while (n >= base)
+	power = n < 0 ? -1 : 1;
+	if (n <= -base || n >= base)
 	{
 		i++;
-		n /= base;
+		power *= base;
+	}
+	while ((n / power) >= base)
+	{
+		i++;
+		power *= base;
 	}
 	return (i);
 }

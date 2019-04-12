@@ -6,17 +6,17 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:03 by gly               #+#    #+#             */
-/*   Updated: 2018/11/09 08:46:09 by gly              ###   ########.fr       */
+/*   Updated: 2019/02/22 09:22:39 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_strdel(char **as)
 {
 	if (as)
 	{
 		free(*as);
-		*as = 0;
+		*as = NULL;
 	}
 }

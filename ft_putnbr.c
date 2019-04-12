@@ -6,22 +6,24 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:06:16 by gly               #+#    #+#             */
-/*   Updated: 2018/11/08 09:20:07 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:59:21 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putnbr(int n)
 {
+	char	c;
+
 	if (n == -2147483648)
 	{
-		ft_putstr("-2147483648");
+		write(1, "-2147483648", 11);
 		return ;
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		write(1, "-", 1);
 		n = -n;
 	}
 	if (n > 9)
@@ -30,5 +32,6 @@ void	ft_putnbr(int n)
 		ft_putnbr(n % 10);
 		return ;
 	}
-	ft_putchar(n + 48);
+	c = n + 48;
+	write(1, &c, 1);
 }

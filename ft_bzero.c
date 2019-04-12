@@ -6,13 +6,23 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 13:11:44 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 13:11:56 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 10:34:09 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	size_t			i;
+	unsigned char	*tmp;
+
+	i = 0;
+	tmp = (unsigned char *)s;
+	while (i < n)
+	{
+		tmp[i] = 0;
+		i++;
+	}
+	return ;
 }

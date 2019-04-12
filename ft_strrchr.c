@@ -6,16 +6,16 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:47:58 by gly               #+#    #+#             */
-/*   Updated: 2018/11/07 14:54:29 by gly              ###   ########.fr       */
+/*   Updated: 2018/11/20 11:11:26 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
-	int		i;
+	size_t	i;
 
 	ptr = 0;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: gly <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 14:29:36 by gly               #+#    #+#             */
-/*   Updated: 2019/03/21 16:28:05 by gly              ###   ########.fr       */
+/*   Updated: 2019/04/19 14:25:48 by gly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					ft_strequ(const char *s1, const char *s2);
 int					ft_strnequ(const char *s1, const char *s2, size_t n);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strjoin(const char *s1, const char *s2);
+char				*ft_strjoin_three(char *first, char *econd, char *third);
 char				*ft_strtrim(const char *s);
 char				**ft_strsplit(const char *s, char c);
 int					ft_free_strtab(char **tab);
@@ -80,9 +81,11 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_print_strtab(char **tab);
 int					ft_strskipc(const char *s, char c);
 char				*ft_strjoinfree(char *s1, char *s2, char flag);
 char				*ft_strchrstr(const char *s, const char *c);
+char				**ft_cpy_strtab(const char **src);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
